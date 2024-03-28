@@ -1,0 +1,162 @@
+body{
+    background-image: linear-gradient(to top,rgba(78, 77, 77, 0.422), rgba(98, 19, 32, 0.597)), 
+    url(../img/pexels-lumn-399161.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+.gameCon{
+    width: 20vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameCon h1{
+    font-size: 2.6rem;
+}
+
+.gameCon h1,
+.gameCon h2{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#cellContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: fit-content;
+}
+
+.cell{
+    cursor: pointer;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 2px solid #eee;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: bold;
+    animation: changeColor 2s infinite linear;
+}
+
+@keyframes changeColor{
+    from{
+        border-color: #000;
+        color: #eee;
+    }
+
+    to{
+        color: #000;
+        border-color: #eee;
+    }
+}
+
+#restartBtn{
+    cursor: pointer;
+    border: 2px solid #eeeeee;
+    background: #000;
+    color: #eeeeee;
+    width: 30%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}
+
+#cellContainer .cell:nth-child(1),
+#cellContainer .cell:nth-child(2),
+#cellContainer .cell:nth-child(3){
+    border-top: none;
+}
+
+#cellContainer .cell:nth-child(1),
+#cellContainer .cell:nth-child(4),
+#cellContainer .cell:nth-child(7){
+    border-left: none;
+}
+
+#cellContainer .cell:nth-child(7),
+#cellContainer .cell:nth-child(8),
+#cellContainer .cell:nth-child(9){
+    border-bottom: none;
+}
+
+#cellContainer .cell:nth-child(3),
+#cellContainer .cell:nth-child(6),
+#cellContainer .cell:nth-child(9){
+    border-right: none;
+}
+
+
+
+@media(max-width: 720px){
+    .gameCon{
+        width: 90vw;
+        padding-top: 16rem;
+        gap: 1.8rem;
+        backdrop-filter: blur(0.6rem);
+        height: fit-content;
+    }
+
+    .gameCon h1{
+        font-size: 3.6rem;
+        background: rgba(222, 184, 135, 0.471);
+    }
+
+    .gameCon h2{
+        font-size: 3.2rem;
+        background: rgba(222, 184, 135, 0.471);
+    }
+
+    .cell{
+        width: 10rem;
+        height: 10rem;
+        font-size: 4.4rem;
+        background: rgba(222, 184, 135, 0.471);
+    }
+
+    #restartBtn{
+        font-size: 2.6rem;
+    }
+
+    #sec footer{
+        font-size: 1.6rem;
+        width: 84%;
+    }
+
+}
+
+#sec{
+    position: relative;
+    height: 100vh;
+    padding-bottom: 1rem;
+}
+
+#sec footer{
+    font-weight: bold;
+    color: burlywood;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@media(max-width: 431px){
+    html{
+        font-size: 52%;
+    }
+}
